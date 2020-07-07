@@ -6,7 +6,7 @@ class Array {
         this._capacity = 0;
         this.memory = new Memory()
         
-        this.ptr = Memory.allocate(this.length);
+        this.ptr = this.memory.allocate(this.length);
         console.log(this.ptr)
     }
 

@@ -83,29 +83,28 @@ function main(){
 
     // Add an item to the array
     arr.push(3);
-    console.log(arr);
+    console.log('push 3',arr);
     //length: 1, capacity: 3, addr: 0
     arr.push(15);
-    console.log(arr);
+    console.log('pushh 15',arr);
     //length: 2, capacity: 3, addr: 1
     arr.push(19); 
-    console.log(arr);
+    console.log('push 19',arr);
     //length: 3, capacity: 3, addr: 2 
     arr.push(45);
     console.log('push 45', arr);
     //length: 4, capacity: 12, addr: 6
     arr.push(10);
-    console.log(arr);
+    console.log('push 10',arr);
     //length: 5, capacity: 12, addr: 7
 
-    arr.pop();
-    console.log('pop 1', arr);
+
+    console.log('pop 1', arr.pop());
     //length: 4, capacity: 12, addr: 7
-    arr.pop();
-    console.log('pop 2', arr);
+
+    console.log('pop 2', arr.pop());
     //length: 3, capacity: 12, addr: 7
-    arr.pop();
-    console.log('pop 3', arr);
+    console.log('pop 3', arr.pop());
     //length: 2, capacity: 12, addr: 7
     console.log('first item in array', arr.get(0));
     arr.push('tauhida');

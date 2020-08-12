@@ -104,5 +104,77 @@ const mergeArr = (arrA,arrB) => {
     const rotate = (str, rotated) => {
         return str.length === rotated.length && rotated.repeat(2).includes(str);
     }
-    console.log(rotate('amazon', 'azonma'));
-    console.log(rotate('amazon', 'azonam'));
+    console.log(rotate('amazon', 'azonma'));   
+    console.log(rotate('amazon', 'azonam')); 
+
+
+
+    function removeStr(str1, str2){
+        let tempArr=[], newStr=[], newStrMod='';
+        let index = 0, j = 0;
+    
+        for(let i=0; i<str2.length; i++){
+            index = (Math.abs(str2[i].charCodeAt() - 'a'.charCodeAt()));
+            if(!tempArr[index]){
+                tempArr[index]=1;
+            }       
+        }    
+        for(let i=0; i<str1.length;i++){
+            index = (Math.abs(str1[i].charCodeAt() - 'a'.charCodeAt()));
+            if(!tempArr[index]){
+                newStr[j++] = str1[i];
+            }
+        }
+        for(let i=0; i<newStr.length; i++){
+            newStrMod +=newStr[i];
+        }
+        return newStrMod;
+    }
+    
+    console.log(removeStr('Hello, Jenn', 'aeiou'))
+    
+    const removeVowels = (str,vowels) => {
+        let newStr = [];
+        for(let i = 0; i < str.length;i++){
+            let vowelFound = false;
+            for(let j = 0; j < vowels.length; j++){
+                if(str[i].toLowerCase() === vowels[j].toLowerCase()){
+                    vowelFound = true;
+                    break;
+                }
+            }
+            if(!vowelFound){
+                newStr.push(str[i]);
+            }
+        } 
+        return newStr.toString();
+    }
+    console.log(removeVowels('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'))
+    
+    
+    function zeroRowsColumns(mat){
+        const zeroRows = [];
+        const zeroCols = [];
+    
+        for (let i=0; i<mat.length; i++) {
+            var row = mat[i];
+            for (var j=0; j<row.length; j++) {
+                const item = row[j];
+                if (item === 0) {
+                    zeroRows[i] = true;
+                    zeroCols[j] = true;
+                }
+            }
+        }
+    
+        for (let i=0; i<mat.length; i++) {
+            var row = mat[i];
+            for (var j=0; j<row.length; j++) {
+                if (zeroRows[i] || zeroCols[j]) {
+                    row[j] = 0;
+                }
+            }
+        }
+        return mat;
+    };
+    
